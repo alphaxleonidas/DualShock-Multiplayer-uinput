@@ -42,7 +42,7 @@ note: rest of the dependencies are not needed in my testing. might have to use `
 Download the files manually or clone repo
 ```
 cd ~
-git clone https://github.com/alphaxleonidas/DualShockMultiplayer-uinput.git
+git clone https://github.com/alphaxleonidas/DualShock-Multiplayer-uinput.git
 ```
 
 Once you installed python on your system, create a virtual enviroment (for example ".venv" in your home folder)
@@ -55,7 +55,7 @@ Update pip
 ```
 When it is done, install the dependencies manually or with the requirements.txt file
 ```
-~/.venv/bin/pip install -r ~/DualShockMultiplayer-uinput/requirements.txt
+~/.venv/bin/pip install -r ~/DualShock-Multiplayer-uinput/requirements.txt
 ```
 Create udev rules file
 ```
@@ -84,7 +84,7 @@ sudo udevadm trigger
 **Steps:**
 - **Connect you PS4/PS5 controller first via USB or Bluetooth**, then run the script
 ```
-~/.venv/bin/python ~/DualShockMultiplayer-uinput/ds4input_multiplayerv2.py
+~/.venv/bin/python ~/DualShock-Multiplayer-uinput/ds4input_multiplayerv2.py
 ```
 as the script looks for the controller directly on start else the script will just stop with an error.
 
@@ -100,7 +100,7 @@ Add this to the file:
 Version=1.0
 Name=DualShock Multiplayer uinput
 Comment=Run DualShock DS4 input script Hot plugging
-Exec=/home/<username>/.venv/bin/python /home/<username>/DualShockMultiplayer-uinput/ds4input_multiplayerv2.py
+Exec=/home/<username>/.venv/bin/python /home/<username>/DualShock-Multiplayer-uinput/ds4input_multiplayerv2.py
 Type=Application
 Icon=input-gaming
 Terminal=false
@@ -109,7 +109,7 @@ Keywords=ds4;dualshock4;controller;dualsense;sense;
 ```
 Replace ```<username>``` with your username, so the paths becomes correct. E.g. 
 
-```Exec=/home/randomusername/.venv/bin/python /home/randomusername/DualShockMultiplayer-uinput/ds4input_multiplayerv2.py```
+```Exec=/home/randomusername/.venv/bin/python /home/randomusername/DualShock-Multiplayer-uinput/ds4input_multiplayerv2.py```
 
 Now make this desktop entry an executeable:
 ```
