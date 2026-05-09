@@ -128,5 +128,6 @@ To disconnect from bluetooth, use (PS + Start)
 - ```ds4input_multiplayerv2.py``` is for hotplugging support.
 
 # Issues 
-- ~~If the controller is disconnected while the script is running, reconnecting will not make it work. You will have to restart the script. So expect some degree of memory leak.~~  Fixed with ds4input_multiplayerv2.py .
+- ~~If the controller is disconnected while the script is running, reconnecting will not make it work. You will have to restart the script.~~  Fixed with ds4input_multiplayerv2.py .
 - After first connecting, the system automatically registers up+forward input from the controller. Which resolves after moving the Left and Right Analogue Sticks. 
+- Some games may require you to operate using the controller in the start screen of the game. It's a game issue. 
