@@ -186,7 +186,6 @@ sudo chmod +x /etc/apt/triggers.d/uinput-sign
 
 3. Udev Rules + Groups
 
- #Udev rule
 ```
 echo 'KERNEL=="uinput", MODE="0660", GROUP="input"' | sudo tee /etc/udev/rules.d/99-uinput.rules
 ```
@@ -209,7 +208,7 @@ sudo udevadm control --reload-rules && sudo udevadm trigger
 
 4. Test
 
-bash
+
 ```
 sudo /usr/local/bin/sign-uinput.sh
 lsmod | grep uinput
