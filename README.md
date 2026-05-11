@@ -140,12 +140,12 @@ To disconnect from bluetooth, use (PS + Start)
 
 1. Create Signing Script
 
-bash
+
 `sudo nano /usr/local/bin/sign-uinput.sh`
 
 Paste this:
 
-bash
+
 ```
 #!/bin/bash
 KERNEL_VER=$(uname -r | sed 's/-generic//')
@@ -160,12 +160,12 @@ else
 fi
 ```
 
-bash
+
 `sudo chmod +x /usr/local/bin/sign-uinput.sh`
 
 2. Create APT Hook
 
-bash
+
 ```
 sudo mkdir -p /etc/apt/triggers.d
 sudo nano /etc/apt/triggers.d/uinput-sign
@@ -173,13 +173,13 @@ sudo nano /etc/apt/triggers.d/uinput-sign
 
 Paste this:
 
-text
+
 ```
 #!/bin/bash
 /usr/local/bin/sign-uinput.sh
 ```
 
-bash
+
 ```
 sudo chmod +x /etc/apt/triggers.d/uinput-sign
 ```
