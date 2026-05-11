@@ -31,7 +31,65 @@ It in general reads the raw input from the PS controllers and sends it as a virt
 - bluetoothctl
   - if desired to be able to disconnect the controller via (PS + Start) combination
 ### dependency installation
-- for an ubuntu based distro, use:
+- for an ubuntu based distro, use:1. Create Signing Script
+
+bash
+sudo nano /usr/local/bin/sign-uinput-mint.sh
+
+Paste this:
+
+bash
+#!/bin/bash
+KERNEL_VER=$(uname -r | sed 's/-generic//')
+MODPATH="/lib/modules/$KERNEL_VER/kernel/drivers/input/misc/uinput.ko"
+
+if [[ -f "$MODPATH" ]]; then
+    cd /tmp
+    sbctl sign -s "$MODPATH"
+    echo "Signed $MODPATH"
+else
+    echo "uinput.ko not found at $MODPATH"
+fi
+
+bash
+sudo chmod +x /usr/local/bin/sign-uinput-mint.sh
+
+2. Create APT Hook
+
+bash
+sudo mkdir -p /etc/apt/triggers.d
+sudo nano /etc/apt/triggers.d/uinput-sign
+
+Paste this:
+
+text
+#!/bin/bash
+/usr/local/bin/sign-uinput-mint.sh
+
+bash
+sudo chmod +x /etc/apt/triggers.d/uinput-sign
+
+3. Udev Rules + Groups (same as CachyOS)
+
+bash
+# Udev rule
+echo 'KERNEL=="uinput", MODE="0660", GROUP="input"' | sudo tee /etc/udev/rules.d/99-uinput.rules
+
+# Add user to input group
+sudo usermod -aG input $USER
+
+# Load module
+sudo modprobe uinput
+
+# Reload rules
+sudo udevadm control --reload-rules && sudo udevadm trigger
+
+4. Test
+
+bash
+sudo /usr/local/bin/sign-uinput-mint.sh
+lsmod | grep uinput
+ls -l /dev/uinput
 ```
 sudo apt update
 sudo apt install python3-dev python3-venv python3-pyudev
@@ -131,4 +189,86 @@ To disconnect from bluetooth, use (PS + Start)
 - ~~If the controller is disconnected while the script is running, reconnecting will not make it work. You will have to restart the script.~~  Fixed with ds4input_multiplayerv2.py .
 - After first connecting, the system automatically registers up+forward input from the controller. Which resolves after moving the Left and Right Analogue Sticks. 
 - Some games may require you to operate using the controller in the start screen of the game. It's a game issue.
-- The Python script needs to be closed manually using System Monitor aka Task Manager if you choose to run it without a terminal. Otherwise, closing the terminal stops it. 
+- The Python script needs to be closed manually using System Monitor aka Task Manager if you choose to run it without a terminal. Otherwise, closing the terminal stops it.
+- The kernel module needs to be signed each time you update your kernel.
+
+# Signing the Module
+
+
+1. Create Signing Script
+
+bash
+`sudo nano /usr/local/bin/sign-uinput.sh`
+
+Paste this:
+
+bash
+```
+#!/bin/bash
+KERNEL_VER=$(uname -r | sed 's/-generic//')
+MODPATH="/lib/modules/$KERNEL_VER/kernel/drivers/input/misc/uinput.ko"
+
+if [[ -f "$MODPATH" ]]; then
+    cd /tmp
+    sbctl sign -s "$MODPATH"
+    echo "Signed $MODPATH"
+else
+    echo "uinput.ko not found at $MODPATH"
+fi
+```
+
+bash
+`sudo chmod +x /usr/local/bin/sign-uinput.sh`
+
+2. Create APT Hook
+
+bash
+```
+sudo mkdir -p /etc/apt/triggers.d
+sudo nano /etc/apt/triggers.d/uinput-sign
+```
+
+Paste this:
+
+text
+```
+#!/bin/bash
+/usr/local/bin/sign-uinput.sh
+```
+
+bash
+```
+sudo chmod +x /etc/apt/triggers.d/uinput-sign
+```
+
+3. Udev Rules + Groups
+
+ #Udev rule
+```
+echo 'KERNEL=="uinput", MODE="0660", GROUP="input"' | sudo tee /etc/udev/rules.d/99-uinput.rules
+```
+
+ Add user to input group
+```
+sudo usermod -aG input $USER
+```
+
+ Load module
+```
+sudo modprobe uinput
+```
+
+ Reload rules
+
+```
+sudo udevadm control --reload-rules && sudo udevadm trigger
+```
+
+4. Test
+
+bash
+```
+sudo /usr/local/bin/sign-uinput.sh
+lsmod | grep uinput
+ls -l /dev/uinput
+```
