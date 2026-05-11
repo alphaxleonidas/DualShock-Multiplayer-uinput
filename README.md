@@ -32,10 +32,53 @@ It in general reads the raw input from the PS controllers and sends it as a virt
   - if desired to be able to disconnect the controller via (PS + Start) combination
 ### dependency installation
 - for an ubuntu based distro, use:
+```
+sudo apt update
+sudo apt install python3-dev python3-venv python3-pyudev
+```
+note: rest of the dependencies are not needed in my testing. might have to use ```bluez``` instead of ```bluetoothctl```.
 
+# Installation
+Download the files manually or clone repo
 ```
-sudo apt install python3 python3-dev python3-venv python3-pyudev
+cd ~
+git clone https://github.com/alphaxleonidas/DualShock-Multiplayer-uinput.git
 ```
+
+Once you installed python on your system, create a virtual enviroment (for example ".venv" in your home folder)
+```
+python3 -m venv ~/.venv
+```
+Update pip
+```
+~/.venv/bin/pip install --upgrade pip setuptools wheel
+```
+When it is done, install the dependencies manually or with the requirements.txt file
+```
+~/.venv/bin/pip install -r ~/DualShock-Multiplayer-uinput/requirements.txt
+```
+Create udev rules file
+```
+sudo nano /etc/udev/rules.d/99-psinput.rules
+```
+and add
+```
+KERNEL=="uinput", MODE="0660", GROUP="input"
+```
+Add user to input group
+```
+sudo usermod -aG input $USER
+```
+Load uinput module
+```
+sudo modprobe uinput
+```
+Reload udev rules
+```
+sudo udevadm control --reload-rules
+sudo udevadm trigger
+```
+
 
 # Usage
 
