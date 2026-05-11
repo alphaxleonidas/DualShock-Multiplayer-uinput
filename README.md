@@ -100,7 +100,7 @@ Add this to the file:
 [Desktop Entry]
 Version=1.0
 Name=DualShock Multiplayer uinput
-Comment=Run DualShock DS4 input script Hot plugging
+Comment=Run DualShock DS4 input script with Hot plugging support
 Exec=/home/<username>/.venv/bin/python /home/<username>/DualShock-Multiplayer-uinput/ds4input_multiplayerv2.py
 Type=Application
 Icon=input-gaming
