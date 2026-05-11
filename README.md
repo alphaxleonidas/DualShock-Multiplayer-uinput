@@ -135,7 +135,7 @@ To disconnect from bluetooth, use (PS + Start)
 - The Python script needs to be closed manually using System Monitor aka Task Manager if you choose to run it without a terminal. Otherwise, closing the terminal stops it.
 - The kernel module needs to be signed each time you update your kernel.
 
-# Signing the Module
+# Signing the Module (Testing)
 
 
 1. Create Signing Script
