@@ -122,7 +122,7 @@ Now connect your DualShock or DualSense and run the ```DualShock Multiplayer uin
 # Autostart on login
 
 ```
-cp -r ~/.local/share/applications/ds4input_multiplayerv2.desktop ~/.config/autostart/
+cp ~/.local/share/applications/ds4input_multiplayerv2.desktop ~/.config/autostart/
 ```
 
 # Disconnect
