@@ -67,6 +67,7 @@ class ControllerHandler:
 
     def handle_events(self):
         keymap = {
+            # Button maping: 
             'BTN_TRIGGER': uinput.BTN_A,
             'BTN_THUMB': uinput.BTN_B,
             'BTN_THUMB2': uinput.BTN_X,
@@ -104,6 +105,7 @@ class ControllerHandler:
 #            BTN_BASE6, # RS
         }
 
+        # Directional Buttons and Stick maping
         abs_map = {
             ecodes.ABS_X: uinput.ABS_X,
             ecodes.ABS_Y: uinput.ABS_Y,
