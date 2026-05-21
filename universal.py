@@ -70,7 +70,8 @@ class ControllerHandler:
             'BTN_TRIGGER': uinput.BTN_A,
             'BTN_THUMB': uinput.BTN_B,
             'BTN_THUMB2': uinput.BTN_X,
-            'BTN_TOP': uinput.BTN_Y,
+            #'BTN_TOP': uinput.BTN_Y,
+            'BTN_JOYSTICK': uinput.BTN_Y,
             'BTN_TOP2': uinput.BTN_TL,
             'BTN_PINKIE': uinput.BTN_TR,
             'BTN_BASE': uinput.BTN_SELECT,
@@ -93,14 +94,14 @@ class ControllerHandler:
             'BTN_MODE': uinput.BTN_MODE,
 
              # testing
-#            BTN_JOYSTICK, # Triangle
-#            BTN_THUMB2,   # Cross (X)
-#            BTN_BASE, # L2
-#            BTN_BASE2, # R2
+#            BTN_JOYSTICK, # Y
+#            BTN_THUMB2,   # A
+#            BTN_BASE, # LT
+#            BTN_BASE2, # RT
 #            BTN_BASE3, # Select
 #            BTN_BASE4, # Start
-#            BTN_BASE5, # L3
-#            BTN_BASE6, # R3
+#            BTN_BASE5, # LS
+#            BTN_BASE6, # RS
         }
 
         abs_map = {
