@@ -1,5 +1,5 @@
 # set to True if you need some debug output in the console
-DEBUG = False
+DEBUG = True
 
 # Deadzone settings for Linux joystick axes centered at 0
 CENTER = 0
