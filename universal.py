@@ -55,6 +55,7 @@ class ControllerHandler:
             uinput.BTN_THUMBL,
             uinput.BTN_THUMBR,
             uinput.BTN_MODE,
+            
         )
 
     def _apply_deadzone(self, code, val):
@@ -90,6 +91,16 @@ class ControllerHandler:
             'BTN_THUMBL': uinput.BTN_THUMBL,
             'BTN_THUMBR': uinput.BTN_THUMBR,
             'BTN_MODE': uinput.BTN_MODE,
+
+             # testing
+#            BTN_JOYSTICK, # Triangle
+#            BTN_THUMB2,   # Cross (X)
+#            BTN_BASE, # L2
+#            BTN_BASE2, # R2
+#            BTN_BASE3, # Select
+#            BTN_BASE4, # Start
+#            BTN_BASE5, # L3
+#            BTN_BASE6, # R3
         }
 
         abs_map = {
