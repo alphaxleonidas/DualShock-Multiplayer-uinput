@@ -79,7 +79,7 @@ class ControllerHandler:
             # PS/Guide button
             uinput.BTN_MODE,
 
-            # Add a virtual key for OBS replay buffer
+            # Add a virtual key
             uinput.KEY_F13,
         )
 
