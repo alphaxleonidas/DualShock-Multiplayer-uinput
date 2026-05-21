@@ -228,12 +228,20 @@ ls -l /dev/uinput
 
 # Debugging
 
-```lsusb```
+`
+lsusb
+`
 
-```cat /proc/bus/input/devices```
+```
+cat /proc/bus/input/devices
+```
 
-```sudo apt install joystick jstest-gtk```
+```
+sudo apt install joystick jstest-gtk
+```
 
-`jstest /dev/input/js0`
+`
+jstest /dev/input/js0
+`
 
 now press button and see the inputs given. Use this to change the parameters in the main .py file. 
