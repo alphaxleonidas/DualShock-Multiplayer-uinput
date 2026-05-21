@@ -57,6 +57,10 @@ When it is done, install the dependencies manually or with the requirements.txt 
 ```
 ~/.venv/bin/pip install -r ~/DualShock-Multiplayer-uinput/requirements.txt
 ```
+or 
+```
+~/.venv/bin/pip install evdev==1.9.2 python_uinput==1.0.1
+```
 Create udev rules file
 ```
 sudo nano /etc/udev/rules.d/99-psinput.rules
