@@ -169,7 +169,9 @@ fi
 ```
 
 
-`sudo chmod +x /usr/local/bin/sign-uinput.sh`
+```
+sudo chmod +x /usr/local/bin/sign-uinput.sh
+```
 
 2. Create APT Hook
 
