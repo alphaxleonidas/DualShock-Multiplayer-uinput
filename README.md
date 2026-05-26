@@ -147,7 +147,9 @@ To disconnect from bluetooth, use (PS + Start)
 1. Create Signing Script
 
 
-`sudo nano /usr/local/bin/sign-uinput.sh`
+```
+sudo nano /usr/local/bin/sign-uinput.sh
+```
 
 Paste this:
 
