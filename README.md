@@ -87,7 +87,7 @@ sudo udevadm trigger
 ```
 ~/.venv/bin/python ~/DualShock-Multiplayer-uinput/ds4input_multiplayerv2.py
 ```
-as the script looks for the controller directly on start else the script will just stop with an error.
+~~as the script looks for the controller directly on start else the script will just stop with an error.~~ Now supports hot plugging.
 
 # Creating an App Entry
 
