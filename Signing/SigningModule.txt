@@ -1,4 +1,6 @@
-`sudo nano /usr/local/bin/sign-uinput.sh`
+```
+sudo nano /usr/local/bin/sign-uinput.sh
+```
 
 ```
 #!/bin/bash
@@ -16,12 +18,18 @@ if [[ -f "$MODPATH" ]]; then
 fi
 ```
 
-`sudo chmod +x /usr/local/bin/sign-uinput.sh`
+```
+sudo chmod +x /usr/local/bin/sign-uinput.sh
+```
 
 
-`sudo mkdir -p /etc/pacman.d/hooks`
+```
+sudo mkdir -p /etc/pacman.d/hooks
+```
 
-`sudo nano /etc/pacman.d/hooks/90-uinput-sign.hook`
+```
+sudo nano /etc/pacman.d/hooks/90-uinput-sign.hook
+```
 ```
 [Trigger]
 Operation = Install
@@ -39,15 +47,25 @@ Exec = /usr/local/bin/sign-uinput.sh
 
 
 
-`sudo /usr/local/bin/sign-uinput.sh`
+```
+sudo /usr/local/bin/sign-uinput.sh
+```
 
 
 Check if uinput loads
-`sudo modprobe uinput`
-`lsmod | grep uinput`
+```
+sudo modprobe uinput
+```
+```
+lsmod | grep uinput
+```
 
 
-`ls -l /dev/uinput`
+```
+ls -l /dev/uinput
+```
 
 
-`sudo pacman -Syu`
+```
+sudo pacman -Syu
+```
