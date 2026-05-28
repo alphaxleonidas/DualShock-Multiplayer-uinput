@@ -110,7 +110,7 @@ Keywords=ds4;dualshock4;controller;dualsense;sense;
 ```
 Replace ```<username>``` with your username, so the paths becomes correct. E.g. 
 
-```Exec=/home/randomusername/.venv/bin/python /home/randomusername/DualShock-Multiplayer-uinput/ds4input_multiplayerv2.py```
+```Exec=/home/YOURUSERNAME/.venv/bin/python /home/YOURUSERNAME/DualShock-Multiplayer-uinput/ds4input_multiplayerv2.py```
 
 Now make this desktop entry an executeable:
 ```
