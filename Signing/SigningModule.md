@@ -1,4 +1,7 @@
 ```
+sudo pacman -S python python-pip python-pyudev
+```
+```
 sudo nano /usr/local/bin/sign-uinput.sh
 ```
 
