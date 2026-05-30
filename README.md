@@ -101,16 +101,15 @@ Add this to the file:
 Version=1.0
 Name=DualShock Multiplayer uinput
 Comment=Run DualShock DS4 input script with Hot plugging support
-Exec=/home/<username>/.venv/bin/python /home/<username>/DualShock-Multiplayer-uinput/ds4input_multiplayerv2.py
+Exec=/home/YOURUSERNAME/.venv/bin/python /home/YOURUSERNAME/DualShock-Multiplayer-uinput/ds4input_multiplayerv2.py
 Type=Application
 Icon=input-gaming
 Terminal=false
 Categories=Utility;Game;
 Keywords=ds4;dualshock4;controller;dualsense;sense;
 ```
-Replace ```<username>``` with your username, so the paths becomes correct. E.g. 
+Replace ```YOURUSERNAME``` in the Exec line with your username, so both the paths becomes correct.
 
-```Exec=/home/YOURUSERNAME/.venv/bin/python /home/YOURUSERNAME/DualShock-Multiplayer-uinput/ds4input_multiplayerv2.py```
 
 Now make this desktop entry an executeable:
 ```
