@@ -221,6 +221,13 @@ class ControllerHandler:
                     if config.DEBUG:
                         print(f"[Player {self.player_id}] [KEY]: {code} = {val}")
 
+
+                    # Add a select and start button state
+                    if code == 'BTN_SELECT':
+                        self.button_state['select'] = (val == 1)
+                    elif code == 'BTN_START':
+                        self.button_state['start'] = (val == 1)
+                    
                     if code in keymap:
                         if self.last_values.get(code) != val:
                             self.ui.emit(keymap[code], val)
@@ -228,13 +235,7 @@ class ControllerHandler:
                     else:
                         if config.DEBUG:
                             print(f"[Player {self.player_id}] [KEY] Unmapped: {code} = {val}")
-
-                    # Add a select and start button state
-                    elif code == 'BTN_SELECT':
-                        self.button_state['select'] = (val == 1)
-                    elif code == 'BTN_START':
-                        self.button_state['start'] = (val == 1)
-                    
+                            
                     # If Share + Options are both pressed, send F13
                     if self.button_state.get('select', False) and self.button_state.get('start', False):
                         self.ui.emit(uinput.KEY_F13, 1)  # press F13
