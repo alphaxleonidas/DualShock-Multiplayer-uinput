@@ -80,7 +80,7 @@ class ControllerHandler:
             uinput.BTN_MODE,
 
             # Add a virtual key
-            uinput.KEY_F13,
+            uinput.KEY_F8,
         )
 
     def get_mac_by_name(self, target_name=None):
@@ -236,12 +236,12 @@ class ControllerHandler:
                         if config.DEBUG:
                             print(f"[Player {self.player_id}] [KEY] Unmapped: {code} = {val}")
                             
-                    # If Share + Options are both pressed, send F13
+                    # If Share + Options are both pressed, send F8
                     if self.button_state.get('select', False) and self.button_state.get('start', False):
-                        self.ui.emit(uinput.KEY_F13, 1)  # press F13
+                        self.ui.emit(uinput.KEY_F8, 1)  # press F8
                         self.ui.syn()
                     else:
-                        self.ui.emit(uinput.KEY_F13, 0)  # release F13
+                        self.ui.emit(uinput.KEY_F8, 0)  # release F8
                         self.ui.syn()
 
         except OSError as e:
