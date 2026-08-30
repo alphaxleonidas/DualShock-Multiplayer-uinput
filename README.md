@@ -85,7 +85,7 @@ sudo udevadm trigger
 **Steps:**
 - **Connect you PS4/PS5 controller first via USB or Bluetooth**, then run the script
 ```
-~/.venv/bin/python ~/DualShock-Multiplayer-uinput/ds4input_multiplayerv2.py
+~/.venv/bin/python ~/DualShock-Multiplayer-uinput/ds4input_multiplayer.py
 ```
 ~~as the script looks for the controller directly on start else the script will just stop with an error.~~ Now supports hot plugging.
 
@@ -93,7 +93,7 @@ sudo udevadm trigger
 
 Instead of running the command, you can create a launch script which will appear in the App Menu.
 ```
-nano ~/.local/share/applications/ds4input_multiplayerv2.desktop
+nano ~/.local/share/applications/ds4input_multiplayer.desktop
 ```
 Add this to the file: 
 ```
@@ -101,7 +101,7 @@ Add this to the file:
 Version=1.0
 Name=DualShock Multiplayer uinput
 Comment=Run DualShock DS4 input script with Hot plugging support
-Exec=/home/YOURUSERNAME/.venv/bin/python /home/YOURUSERNAME/DualShock-Multiplayer-uinput/ds4input_multiplayerv2.py
+Exec=/home/YOURUSERNAME/.venv/bin/python /home/YOURUSERNAME/DualShock-Multiplayer-uinput/ds4input_multiplayer.py
 Type=Application
 Icon=input-gaming
 Terminal=false
@@ -113,7 +113,7 @@ Replace ```YOURUSERNAME``` in the Exec line with your username, so both the path
 
 Now make this desktop entry an executeable:
 ```
-chmod +x ~/.local/share/applications/ds4input_multiplayerv2.desktop
+chmod +x ~/.local/share/applications/ds4input_multiplayer.desktop
 ```
 Now logout and relogin into a new session. You will see ```DualShock Multiplayer uinput``` in the appmenu.
 Now connect your DualShock or DualSense and run the ```DualShock Multiplayer uinput``` from the appmenu.
@@ -121,7 +121,7 @@ Now connect your DualShock or DualSense and run the ```DualShock Multiplayer uin
 # Autostart on login
 
 ```
-cp ~/.local/share/applications/ds4input_multiplayerv2.desktop ~/.config/autostart/
+cp ~/.local/share/applications/ds4input_multiplayer.desktop ~/.config/autostart/
 ```
 
 # Disconnect
@@ -131,10 +131,10 @@ To disconnect from bluetooth, use (PS + Start)
 - No vibration / force feedback
 - The PS button is a separate button that you can map, for example in AntiMicroX
 - In the config.py file you can change the deadzone of each stick, the name of the controller and if you want to be able to use the (PS + Start) combo to disconnect the controller.
-- ```ds4input_multiplayerv2.py``` is for hotplugging support.
+- ```ds4input_multiplayer.py``` is for hotplugging support.
 
 # Issues 
-- ~~If the controller is disconnected while the script is running, reconnecting will not make it work. You will have to restart the script.~~  Fixed with ds4input_multiplayerv2.py .
+- ~~If the controller is disconnected while the script is running, reconnecting will not make it work. You will have to restart the script.~~  Fixed with ds4input_multiplayer.py .
 - After first connecting, the system automatically registers up+forward input from the controller. Which resolves after moving the Left and Right Analogue Sticks. 
 - The kernel module needs to be signed each time you update your kernel.
 
