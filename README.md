@@ -133,8 +133,8 @@ To disconnect from bluetooth, use (PS + Start)
 - In the config.py file you can change the deadzone of each stick, the name of the controller and if you want to be able to use the (PS + Start) combo to disconnect the controller.
 - ```ds4input_multiplayer.py``` is for hotplugging support.
 
-# Issues 
-- ~~If the controller is disconnected while the script is running, reconnecting will not make it work. You will have to restart the script.~~  Fixed with ds4input_multiplayer.py .
+#  Issues
+- ~~If the controller is disconnected while the script is running, reconnecting will not make it work. You will have to restart the script.~~  Fixed.
 - After first connecting, the system automatically registers up+forward input from the controller. Which resolves after moving the Left and Right Analogue Sticks. 
 - The kernel module needs to be signed each time you update your kernel.
 
