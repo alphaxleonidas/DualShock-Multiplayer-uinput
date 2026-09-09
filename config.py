@@ -1,5 +1,5 @@
 # set to True if you need some debug output in the console
-DEBUG = False
+DEBUG = True
 
 # Deadzone settings, CENTER should be left untouched
 CENTER = 128
